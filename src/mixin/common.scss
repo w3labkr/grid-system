@@ -1,0 +1,32 @@
+/// --------------------------------------------------
+/// Common
+/// --------------------------------------------------
+
+// @include clear;
+@mixin clear {
+  content: '';
+  display: table; 
+  clear: both; 
+}
+
+// @include hover {};
+@mixin hover {
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
+
+// @include rgba-bg {};
+@mixin rgba-bg($color, $alpha:1) {
+  background-color: $color;
+  background-color: rgba($color, $alpha); 
+}
+
+// @include rgba-color {};
+@mixin rgba-color($color, $alpha:1) {
+  color: $color;
+  color: rgba($color, $alpha); 
+}

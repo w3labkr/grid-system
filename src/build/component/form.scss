@@ -1,0 +1,17 @@
+@import '../../global';
+@import '../../mixin/form';
+
+/// --------------------------------------------------
+/// Mixin
+/// --------------------------------------------------
+
+// @include make-basis;
+@mixin make-basis($breakpoint-name:'') {
+  @include make-display($breakpoint-name);
+}
+
+/// --------------------------------------------------
+/// Form
+/// --------------------------------------------------
+
+@include make-basis;

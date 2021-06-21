@@ -1,0 +1,21 @@
+@import 'common';
+@import 'media';
+
+/// --------------------------------------------------
+/// Box
+/// --------------------------------------------------
+
+// @include make-display;
+@mixin make-display($breakpoint-name:'') {
+
+  // multiple
+  $values: (
+    block: block,
+    inline: inline-block
+  );
+
+  @each $prop, $attr in $values {
+    .#{$breakpoint-name}#{$prop}-field {display: $attr}
+  }
+
+}

@@ -1,0 +1,13 @@
+/// --------------------------------------------------
+/// Breakpoint
+/// --------------------------------------------------
+
+// breakpoint-value($breakpoint-key);
+@function breakpoint-value($breakpoint-key) {
+  @if map-has-key($breakpoints, $breakpoint-key) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint-key);
+    @return $breakpoint-value;
+  } @else {
+    @return $breakpoint-desktop;
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "grid-system",
+  "version": "2.0.7",
+  "description": "Grid System 2(Beta) is a responsive and desktop project and is based on sass and typescript.",
+  "main": "gulpfile.babel.js",
+  "envelopment": "production",
+  "copyright": "All Rights Reserved.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w3labkr/grid-system.git"
+  },
+  "keywords": [
+    "grid-system",
+    "layout",
+    "bootstrap",
+    "foundation",
+    "css",
+    "scss",
+    "js",
+    "javascript",
+    "jquery",
+    "ts",
+    "typescript",
+    "gulp"
+  ],
+  "author": "www",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/w3labkr/grid-system/issues"
+  },
+  "homepage": "https://github.com/w3labkr/grid-system#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/register": "^7.7.0",
+    "css-mqpacker": "^7.0.0",
+    "del": "^5.1.0",
+    "git-rev-sync": "^1.12.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csscomb": "^3.1.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-header": "^2.0.9",
+    "gulp-if": "^3.0.0",
+    "gulp-jsdoc3": "^2.0.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "jshint": "^2.10.3",
+    "moment": "^2.24.0",
+    "typescript": "^3.7.2"
+  }
+}

@@ -1,0 +1,63 @@
+@import '../../global';
+@import '../../mixin/util';
+
+/// --------------------------------------------------
+/// Mixin
+/// --------------------------------------------------
+
+// @include make-basis;
+@mixin make-basis($breakpoint-name:'') {
+
+	// width: px, %, vw
+	@include make-width($breakpoint-name, w, 1px, 0, 100, 5);
+	@include make-width($breakpoint-name, w, 1px, 150, 1000, 50);
+	@include make-width($breakpoint-name, pw, 1%, 0, 100, 5);
+	@include make-width($breakpoint-name, vw, 1vw, 0, 100, 5);
+
+	// height: px, %, vh
+	@include make-height($breakpoint-name, h, 1px, 0, 100, 5);
+	@include make-height($breakpoint-name, h, 1px, 150, 1000, 50);
+	@include make-height($breakpoint-name, ph, 1%, 0, 100, 5);
+	@include make-height($breakpoint-name, vh, 1vh, 0, 100, 5);
+
+	// min-width: px, %, vw
+	@include make-min-width($breakpoint-name, min-w, 1px, 0, 100, 5);
+	@include make-min-width($breakpoint-name, min-w, 1px, 150, 1000, 50);
+	@include make-min-width($breakpoint-name, min-pw, 1%, 0, 100, 5);
+	@include make-min-width($breakpoint-name, min-vw, 1vw, 0, 100, 5);
+
+	// min-height: px, %, vh
+	@include make-min-height($breakpoint-name, min-h, 1px, 0, 100, 5);
+	@include make-min-height($breakpoint-name, min-h, 1px, 150, 1000, 50);
+	@include make-min-height($breakpoint-name, min-ph, 1%, 0, 100, 5);
+	@include make-min-height($breakpoint-name, min-vh, 1vh, 0, 100, 5);
+
+	// max-width: px, %, vw
+	@include make-max-width($breakpoint-name, max-w, 1px, 0, 100, 5);
+	@include make-max-width($breakpoint-name, max-w, 1px, 150, 1000, 50);
+	@include make-max-width($breakpoint-name, max-pw, 1%, 0, 100, 5);
+	@include make-max-width($breakpoint-name, max-vw, 1vw, 0, 100, 5);
+
+	// max-height: px, %, vh
+	@include make-max-height($breakpoint-name, max-h, 1px, 0, 100, 5);
+	@include make-max-height($breakpoint-name, max-h, 1px, 150, 1000, 50);
+	@include make-max-height($breakpoint-name, max-ph, 1%, 0, 100, 5);
+	@include make-max-height($breakpoint-name, max-vh, 1vh, 0, 100, 5);
+
+	// margin: t, r, b, l, x, y
+	@include make-margin($breakpoint-name, 1px, 0, 100, 5);
+	@include make-margin($breakpoint-name, 1px, 150, 1000, 50);
+
+	// padding: t, r, b, l, x, y
+	@include make-padding($breakpoint-name, 1px, 0, 100, 5);
+	@include make-padding($breakpoint-name, 1px, 150, 1000, 50);
+
+}
+
+
+
+/// --------------------------------------------------
+/// Slim
+/// --------------------------------------------------
+
+@include make-basis;

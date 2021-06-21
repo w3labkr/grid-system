@@ -1,0 +1,182 @@
+@import 'common';
+@import 'media';
+
+/// --------------------------------------------------
+/// Util
+/// --------------------------------------------------
+
+// @include make-width;
+@mixin make-width($breakpoint-name:'', $name:'', $unit:1px, $start:0, $end:100, $increase:10) {
+
+	// default
+	@if $start == 0 {
+		.#{$breakpoint-name}#{$name}{width:auto}
+	}
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+		$value: $step * $unit;
+		.#{$breakpoint-name}#{$name}-#{$step}{width:$value;}
+	}
+
+}
+
+// @include make-height;
+@mixin make-height($breakpoint-name:'', $name:'', $unit:1px, $start:0, $end:100, $increase:10) {
+
+	// default
+	@if $start == 0 {
+		.#{$breakpoint-name}#{$name}{height:auto}
+	}
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+		$value: $step * $unit;
+		.#{$breakpoint-name}#{$name}-#{$step}{height:$value;}
+	}
+
+}
+
+// @include make-min-width;
+@mixin make-min-width($breakpoint-name:'', $name:'', $unit:1px, $start:0, $end:100, $increase:10) {
+
+	// default
+	@if $start == 0 {
+		.#{$breakpoint-name}#{$name}{min-width:0}
+	}
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+		$value: $step * $unit;
+		.#{$breakpoint-name}#{$name}-#{$step}{min-width:$value;}
+	}
+
+}
+
+// @include make-min-height;
+@mixin make-min-height($breakpoint-name:'', $name:'', $unit:1px, $start:0, $end:100, $increase:10) {
+
+	// default
+	@if $start == 0 {
+		.#{$breakpoint-name}#{$name}{min-height:0}
+	}
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+		$value: $step * $unit;
+		.#{$breakpoint-name}#{$name}-#{$step}{min-height:$value;}
+	}
+
+}
+
+// @include make-max-width;
+@mixin make-max-width($breakpoint-name:'', $name:'', $unit:1px, $start:0, $end:100, $increase:10) {
+
+	// default
+	@if $start == 0 {
+		.#{$breakpoint-name}#{$name}{max-width:none}
+	}
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+		$value: $step * $unit;
+		.#{$breakpoint-name}#{$name}-#{$step}{max-width:$value;}
+	}
+
+}
+
+// @include make-max-height;
+@mixin make-max-height($breakpoint-name:'', $name:'', $unit:1px, $start:0, $end:100, $increase:10) {
+
+	// default
+	@if $start == 0 {
+		.#{$breakpoint-name}#{$name}{max-height:none}
+	}
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+		$value: $step * $unit;
+		.#{$breakpoint-name}#{$name}-#{$step}{max-height:$value;}
+	}
+
+}
+
+// @include make-margin;
+@mixin make-margin($breakpoint-name:'', $unit:1px, $start:0, $end:100, $increase:10) {
+
+	// default
+	.#{$breakpoint-name}mt{margin-top:auto;}
+	.#{$breakpoint-name}mr{margin-right:auto;}
+	.#{$breakpoint-name}mb{margin-bottom:auto;}
+	.#{$breakpoint-name}ml{margin-left:auto;}
+	.#{$breakpoint-name}mx{margin-left:auto; margin-right:auto;}
+	.#{$breakpoint-name}my{margin-top:auto; margin-bottom:auto;}
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+		$value: $step * $unit;
+		.#{$breakpoint-name}mt-#{$step}{margin-top:$value;}
+		.#{$breakpoint-name}mr-#{$step}{margin-right:$value;}
+		.#{$breakpoint-name}mb-#{$step}{margin-bottom:$value;}
+		.#{$breakpoint-name}ml-#{$step}{margin-left:$value;}
+		.#{$breakpoint-name}mx-#{$step}{margin-left:$value; margin-right:$value;}
+		.#{$breakpoint-name}my-#{$step}{margin-top:$value; margin-bottom:$value;}
+	}
+
+}
+
+// @include make-padding;
+@mixin make-padding($breakpoint-name:'', $unit:1px, $start:0, $end:100, $increase:10) {
+
+	// default
+	.#{$breakpoint-name}pt{padding-top:auto;}
+	.#{$breakpoint-name}pr{padding-right:auto;}
+	.#{$breakpoint-name}pb{padding-bottom:auto;}
+	.#{$breakpoint-name}pl{padding-left:auto;}
+	.#{$breakpoint-name}px{padding-left:auto; padding-right:auto;}
+	.#{$breakpoint-name}py{padding-top:auto; padding-bottom:auto;}
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+		$value: $step * $unit;
+		.#{$breakpoint-name}pt-#{$step}{padding-top:$value;}
+		.#{$breakpoint-name}pr-#{$step}{padding-right:$value;}
+		.#{$breakpoint-name}pb-#{$step}{padding-bottom:$value;}
+		.#{$breakpoint-name}pl-#{$step}{padding-left:$value;}
+		.#{$breakpoint-name}px-#{$step}{padding-left:$value; padding-right:$value;}
+		.#{$breakpoint-name}py-#{$step}{padding-top:$value; padding-bottom:$value;}
+	}
+
+}

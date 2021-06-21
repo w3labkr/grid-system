@@ -1,0 +1,22 @@
+@import '../../global';
+@import '../../mixin/a11y';
+
+/// --------------------------------------------------
+/// Mixin
+/// --------------------------------------------------
+
+// @include make-basis;
+@mixin make-basis($breakpoint-name:'') {
+
+  @include make-ir($breakpoint-name);
+  @include make-disabled($breakpoint-name);
+  @include make-ellipsis($breakpoint-name);
+  @include make-screen-reader-text($breakpoint-name);
+
+}
+
+/// --------------------------------------------------
+/// Slim
+/// --------------------------------------------------
+
+@include make-basis;

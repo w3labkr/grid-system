@@ -1,0 +1,36 @@
+@import 'common';
+@import 'media';
+
+// https://www.sitepoint.com/structuring-css-class-selectors-with-sass/
+
+// @include element() {}
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+// @include modifier() {}
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+@mixin new($block) {
+  @at-root .#{$block} {
+    @content;
+  }
+}
+
+@mixin has($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin when($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}

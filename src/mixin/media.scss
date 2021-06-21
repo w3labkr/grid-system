@@ -1,0 +1,176 @@
+/// --------------------------------------------------
+/// Respond
+/// https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
+/// --------------------------------------------------
+
+// @include respond-above(breakpoint-key) {}
+@mixin respond-above($breakpoint-key) {
+  @if map-has-key($breakpoints, $breakpoint-key) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint-key);
+    @media (min-width: $breakpoint-value + 1) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint-key}.';
+  }
+}
+
+// @include respond-below(breakpoint) {}
+@mixin respond-below($breakpoint-key) {
+  @if map-has-key($breakpoints, $breakpoint-key) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint-key);
+    @media (max-width: ($breakpoint-value)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint-key}.';
+  }
+}
+
+// @include respond-between(breakpoint) {}
+@mixin respond-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+    @media (min-width: $lower-breakpoint + 1) and (max-width: ($upper-breakpoint)) {
+      @content;
+    }
+  } @else {
+    @if (map-has-key($breakpoints, $lower) == false) {
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+    @if (map-has-key($breakpoints, $upper) == false) {
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
+
+
+/// --------------------------------------------------
+/// Breakpoint
+/// https://getbootstrap.com/docs/4.3/layout/grid/
+/// https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+/// --------------------------------------------------
+
+// @include desktop {}
+@mixin desktop { 
+  @include respond-below(desktop) { @content; }; 
+}
+
+// @include notebook {}
+@mixin notebook { 
+  @include respond-below(notebook) { @content; }; 
+}
+
+// @include tablet {}
+@mixin tablet { 
+  @include respond-below(tablet) { @content; }; 
+}
+
+// @include mobile {}
+@mixin mobile { 
+  @include respond-below(mobile) { @content; }; 
+}
+
+
+
+/// --------------------------------------------------
+/// Only Breakpoint
+/// https://getbootstrap.com/docs/4.3/layout/grid/
+/// https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+/// --------------------------------------------------
+
+// @include only-desktop {}
+@mixin only-desktop { 
+  @include respond-between(notebook, desktop) { @content; }; 
+}
+
+// @include only-notebook {}
+@mixin only-notebook { 
+  @include respond-between(tablet, notebook) { @content; }; 
+}
+
+// @include only-tablet {}
+@mixin only-tablet { 
+  @include respond-between(mobile, tablet) { @content; }; 
+}
+
+// @include only-mobile {}
+@mixin only-mobile { 
+  @include respond-below(mobile) { @content; }; 
+}
+
+
+
+/// --------------------------------------------------
+/// Breakpoints
+/// --------------------------------------------------
+
+// @include make-breakpoint;
+@mixin make-breakpoints {
+  @include desktop {
+    @include make-breakpoint-loop(desktop);
+  }
+  @include notebook {
+    @include make-breakpoint-loop(notebook);
+  }
+  @include tablet {
+    @include make-breakpoint-loop(tablet);
+  }
+  @include mobile {
+    @include make-breakpoint-loop(mobile);
+  }
+}
+
+// @include make-breakpoint-loop();
+@mixin make-breakpoint-loop($breakpoint-key) {
+  @if $breakpoint-key != '' { $breakpoint-key: $breakpoint-key + '-'; }
+  @include make-basis($breakpoint-key);
+}
+
+
+
+/// --------------------------------------------------
+/// Orientation
+/// --------------------------------------------------
+
+// @include landscape {}
+@mixin landscape {
+  @media screen and (orientation:landscape) { @content; }
+}
+
+// @include portrait {}
+@mixin portrait {
+  @media screen and (orientation:portrait) { @content; }
+}
+
+
+
+/// --------------------------------------------------
+/// IOS
+/// --------------------------------------------------
+
+// @include retina {}
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    	@content;
+  }
+}
+
+
+
+/// --------------------------------------------------
+/// Print
+/// --------------------------------------------------
+
+// @include print {}
+@mixin print {
+  @media print { @content; }
+}

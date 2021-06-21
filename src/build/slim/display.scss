@@ -1,0 +1,19 @@
+@import '../../global';
+@import '../../mixin/display';
+
+/// --------------------------------------------------
+/// Mixin
+/// --------------------------------------------------
+
+@mixin make-basis($breakpoint-name:'') {
+  
+  @include make-display($breakpoint-name);
+  @include make-visible($breakpoint-name);
+  
+}
+
+/// --------------------------------------------------
+/// Slim
+/// --------------------------------------------------
+
+@include make-basis;
