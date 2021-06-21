@@ -1,0 +1,27 @@
+@import '../../global';
+@import '../../mixin/font';
+
+/// --------------------------------------------------
+/// Mixin
+/// --------------------------------------------------
+
+// @include make-basis;
+@mixin make-basis($breakpoint-name:'') {
+
+  // font-size
+	@include make-font-size($breakpoint-name, 1px, 0, 0, 1);
+	@include make-font-size($breakpoint-name, 1px, 10, 20, 1);
+	@include make-font-size($breakpoint-name, 1px, 21, 30, 2);
+	@include make-font-size($breakpoint-name, 1px, 31, 49, 3);
+	@include make-font-size($breakpoint-name, 1px, 50, 90, 5);
+
+  // font-weight
+	@include make-font-weight($breakpoint-name, 100, 900, 100);
+
+}
+
+/// --------------------------------------------------
+/// Slim
+/// --------------------------------------------------
+
+@include make-basis;

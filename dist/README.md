@@ -1,13 +1,19 @@
 # Grid System 2(Beta)
-Grid System 2(Beta) is a responsive and desktop project and is based on sass and typescript.
-
-
-## Document
-Please see [Document](https://w3labkr.github.io/grid-system/) for more information.
+Grid System 2(Beta) is a responsive and desktop project and is based on sass and typescript.   
 
 
 
-## Structure
+## Github   
+<https://github.com/w3labkr/grid-system/>   
+
+
+
+## Document   
+Please see [Document](https://w3labkr.github.io/grid-system/) for more information.   
+
+
+
+## Structure   
 ```
 o
 |-- dist
@@ -25,7 +31,7 @@ o
 ```
 
 
-## Installation
+## Installation   
 ```
 | filename               | filesize | breakpoint | component | rules | selectors |
 |------------------------|----------|------------|-----------|-------|-----------|
@@ -36,7 +42,7 @@ o
 ```
 
 
-Link:
+Link:   
 ```
 <link rel="stylesheet" href="path/to/grid-system.min.css" />
 <link rel="stylesheet" href="path/to/grid-system-component.min.css" />
@@ -44,7 +50,7 @@ Link:
 <link rel="stylesheet" href="path/to/grid-system-slim.min.css" />
 ```
 
-CDN:
+CDN:   
 ```
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w3labkr/grid-system/dist/grid-system.min.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w3labkr/grid-system/dist/grid-system-component.min.css" />
@@ -54,9 +60,9 @@ CDN:
 
 
 
-## Usage
+## Usage   
 
-### Breakpoints
+### Breakpoints   
 ```
 | breakpoints | classes     |
 |-------------|-------------|
@@ -68,9 +74,9 @@ CDN:
 
 
 
-### Layout
+### Layout      
 
-usage:
+usage:   
 ```
 | layout       | class                          | required | value           | increase |
 |--------------|--------------------------------|----------|-----------------|----------|
@@ -92,7 +98,8 @@ usage:
 | order        | .order-{value}                 | .orders  | between 1 to 12 | 1        |
 ```
 
-example:
+example:   
+
 ```
 <div class="columns gutter-10 column-count-4 mobile-column-count-2">
   <div class="column">content</div>
@@ -104,9 +111,9 @@ example:
 
 
 
-### Alignment
+### Alignment   
 
-usage:
+usage:   
 ```
 | alignment  | class              | required    | value                                 |
 |------------|--------------------|-------------|---------------------------------------|
@@ -120,7 +127,7 @@ usage:
 |            |                    |             | bottomleft, bottomcenter, bottomright |
 ```
 
-example:
+example:   
 ```
 <div class="aligns vh-100">
   <div class="align-middle">
@@ -130,9 +137,9 @@ example:
 ```
 
 
-### Display
+### Display   
 
-usage:
+usage:   
 ```
 | display             | property   | value                                                                        |
 |---------------------|------------|------------------------------------------------------------------------------|
@@ -145,9 +152,9 @@ usage:
 
 
 
-### A11y
+### A11y   
 
-usage:
+usage:   
 ```
 | A11y          | class               |
 |---------------|---------------------|
@@ -159,9 +166,9 @@ usage:
 
 
 
-### Font
+### Font   
 
-font-size:
+font-size:   
 ```
 | font         | value            | increase |
 |--------------|------------------|----------|
@@ -172,7 +179,7 @@ font-size:
 | font-{value} | between 50 to 90 | 5        |
 ```
 
-font-weight:
+font-weight:   
 ```
 | font-{value} | property                                          |
 |--------------|---------------------------------------------------|
@@ -190,21 +197,21 @@ For more information [www.w3.org](https://www.w3.org/TR/css3-fonts/)
 
 
 
-### Util
+### Util   
 
-#### width
+#### width   
 
-syntax:
+syntax:   
 ```
 {unit}-{value}
 ```
 
-property:
-1. w: px
-2. pw: %
-3. vw: vw
+property:   
+1. w: px   
+2. pw: %   
+3. vw: vw    
 
-usage:
+usage:   
 ```
 | class      | unit | value               | increase |
 |------------|------|---------------------|----------|
@@ -217,26 +224,26 @@ usage:
 | vw-{value} | vw   | between 0 to 100    | 5        |
 ```
 
-example:
+example:   
 ```
 <div class"w"></div>
 <div class"w-100"></div>
 ```
 
 
-#### height
+#### height   
 
-syntax:
+syntax:   
 ```
 {unit}-{value}
 ```
 
-property:
-1. h: px
-2. ph: %
-3. vh: vh
+property:   
+1. h: px   
+2. ph: %   
+3. vh: vh    
 
-usage:
+usage:   
 ```
 | class      | unit | value               | increase |
 |------------|------|---------------------|----------|
@@ -249,26 +256,26 @@ usage:
 | vh-{value} | vh   | between 0 to 100    | 5        |
 ```
 
-example:
+example:   
 ```
 <div class"h"></div>
 <div class"h-100"></div>
 ```
 
 
-#### min-width
+#### min-width   
 
-syntax:
+syntax:   
 ```
 min-{unit}-{value}
 ```
 
-property:
-1. w: px
-2. pw: %
-3. vw: vw
+property:   
+1. w: px   
+2. pw: %   
+3. vw: vw    
 
-usage:
+usage:   
 ```
 | class          | unit | value               | increase |
 |----------------|------|---------------------|----------|
@@ -281,26 +288,26 @@ usage:
 | min-vw-{value} | vw   | between 0 to 100    | 5        |
 ```
 
-example:
+example:   
 ```
 <div class"min-w"></div>
 <div class"min-w-100"></div>
 ```
 
 
-#### min-height
+#### min-height   
 
-syntax:
+syntax:   
 ```
 min-{unit}-{value}
 ```
 
-property:
-1. h: px
-2. ph: %
-3. vh: vh
+property:   
+1. h: px   
+2. ph: %   
+3. vh: vh    
 
-usage:
+usage:   
 ```
 | class          | unit | value               | increase |
 |----------------|------|---------------------|----------|
@@ -313,26 +320,26 @@ usage:
 | min-vh-{value} | vh   | between 0 to 100    | 5        |
 ```
 
-example:
+example:   
 ```
 <div class"min-h"></div>
 <div class"min-h-100"></div>
 ```
 
 
-#### max-width
+#### max-width   
 
-syntax:
+syntax:   
 ```
 max-{unit}-{value}
 ```
 
-property:
-1. w: px
-2. pw: %
-3. vw: vw
+property:   
+1. w: px   
+2. pw: %   
+3. vw: vw    
 
-usage:
+usage:   
 ```
 | class          | unit | value               | increase |
 |----------------|------|---------------------|----------|
@@ -345,26 +352,26 @@ usage:
 | max-vw-{value} | vw   | between 0 to 100    | 5        |
 ```
 
-example:
+example:   
 ```
 <div class"max-w"></div>
 <div class"max-w-100"></div>
 ```
 
 
-#### max-height
+#### max-height   
 
-syntax:
+syntax:   
 ```
 max-{unit}-{value}
 ```
 
-property:
-1. h: px
-2. ph: %
-3. vh: vh
+property:   
+1. h: px   
+2. ph: %   
+3. vh: vh    
 
-usage:
+usage:   
 ```
 | class          | unit | value               | increase |
 |----------------|------|---------------------|----------|
@@ -377,33 +384,33 @@ usage:
 | max-vh-{value} | vh   | between 0 to 100    | 5        |
 ```
 
-example:
+example:   
 ```
 <div class"max-h"></div>
 <div class"max-h-100"></div>
 ```
 
 
-#### margin and padding
+#### margin and padding   
 
-syntax:
+syntax:   
 ```
 {property}{direcation}-{value}
 ```
 
-property:
-1. m: margin
+property:   
+1. m: margin   
 2. p: padding  
  
-direction:
-1. t: top
-2. r: right
-3. b: bottom
-4. l: left
-5. x: left, right
-6. y: top, bottom
+direction:   
+1. t: top   
+2. r: right   
+3. b: bottom   
+4. l: left   
+5. x: left, right   
+6. y: top, bottom   
 
-usage:
+usage:   
 ```
 | class                            | value               | increase |
 |----------------------------------|---------------------|----------|
@@ -412,7 +419,7 @@ usage:
 | {m, p}{t, r, b, l, x, y}-{value} | between 100 to 1000 | 50       |
 ```
 
-example:
+example:   
 ```
 <div class="mt"></div>
 <div class="mr-10"></div>
@@ -420,15 +427,15 @@ example:
 
 
 
-## Browser Support
-IE9+, Edge, Chrome, Firefox, Opera, Safari
+## Browser Support   
+IE9+, Edge, Chrome, Firefox, Opera, Safari   
 
 
 
-## Changelog
-Please see [CHANGELOG](CHANGELOG) for more information what has changed recently.
+## Changelog   
+Please see [CHANGELOG](CHANGELOG) for more information what has changed recently.   
 
 
 
-## License
-This software is licensed under the [MIT LICENSE](LICENSE)
+## License   
+Grid System 2(Beta) is licensed under the [MIT LICENSE](LICENSE)   

@@ -1,0 +1,48 @@
+/// --------------------------------------------------
+/// Sass Unit
+/// --------------------------------------------------
+
+$browser-context: 16px; // Default
+
+
+
+/// --------------------------------------------------
+/// Breakpoints
+/// --------------------------------------------------
+
+$breakpoints: (
+	desktop: 1920px,
+	notebook: 1440px,
+	tablet: 1024px,
+	mobile: 767px
+);
+
+$breakpoint-desktop: map-get($breakpoints, desktop);
+$breakpoint-notebook: map-get($breakpoints, notebook);
+$breakpoint-tablet: map-get($breakpoints, tablet);
+$breakpoint-mobile: map-get($breakpoints, mobile);
+
+
+
+/// --------------------------------------------------
+/// Typography
+/// --------------------------------------------------
+
+$base-font-family: 'Malgun Gothic', sans-serif;
+$base-font-size: $browser-context;
+$base-font-weight: 400;
+$base-line-height: 1.6;
+
+
+
+/// --------------------------------------------------
+/// Color
+/// --------------------------------------------------
+
+$base-color: #222222;
+$primary-color: #ffb302;
+$secondary-color: #ffdf01;
+
+// selection
+$selection-color: #ffdf01;
+$selection-alpha: .3;

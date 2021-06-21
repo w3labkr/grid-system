@@ -1,0 +1,57 @@
+@import 'common';
+@import 'media';
+
+/// --------------------------------------------------
+/// IR Method
+/// --------------------------------------------------
+
+// @include make-ir;
+@mixin make-ir($breakpoint-name:'') {
+  // Phark with inline image method
+  .#{$breakpoint-name}ir-phark { overflow: hidden; white-space: nowrap; text-indent: -9999px; }
+}
+
+
+
+/// --------------------------------------------------
+/// Disabled
+/// --------------------------------------------------
+
+// @include make-disabled;
+@mixin make-disabled($breakpoint-name:'') {
+  // Disabled Link
+  .#{$breakpoint-name}disabled { 
+    cursor: not-allowed; opacity: .5;
+    &>a { display: block; text-decoration: none; pointer-events: none; }
+  }
+}
+
+
+
+/// --------------------------------------------------
+/// ellipsis
+/// --------------------------------------------------
+
+// @include make-ellipsis;
+@mixin make-ellipsis($breakpoint-name:'') {
+  // one-line ellipsis
+  .#{$breakpoint-name}ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+
+
+
+/// --------------------------------------------------
+/// Screen Reader Text
+/// --------------------------------------------------
+
+// @include make-screen-reader-text;
+@mixin make-screen-reader-text($breakpoint-name:'') {
+  // Text meant only for screen readers. Many screen reader and browser combinations announce broken words as they would appear visually.
+  .#{$breakpoint-name}screen-reader-text { 
+    position: absolute !important; 
+    overflow: hidden; clip: rect(1px, 1px, 1px, 1px); 
+    width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; 
+    word-wrap: normal !important; clip-path: inset(50%); 
+    &:focus { font-size: 14px; line-height: normal; z-index: 100000; top: 5px; left: 5px; display: block; clip: auto !important; width: auto; height: auto; padding: 15px 23px 14px; text-decoration: none; color: #ffb302; border-radius: 3px; background-color: #f1f1f1; box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6); clip-path: none; }
+  }
+}

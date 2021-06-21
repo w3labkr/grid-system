@@ -1,0 +1,36 @@
+@import 'common';
+@import 'media';
+
+/// --------------------------------------------------
+/// Typography
+/// --------------------------------------------------
+
+// @include make-font-size;
+@mixin make-font-size($breakpoint-name:'', $unit:1px, $start:1, $end:100, $increase:10) {
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+    $value: $step * $unit;
+		.#{$breakpoint-name}font-#{$step}{font-size:$value;}
+	}
+
+}
+
+// @include make-font-weight;
+@mixin make-font-weight($breakpoint-name:'', $start:100, $end:900, $increase:100) {
+
+	// increase
+	$min: ceil($start/$increase);
+	$max: ceil($end/$increase);
+
+	@for $i from $min through $max {
+		$step: $i * $increase;
+		.#{$breakpoint-name}font-#{$step}{font-weight:$step;}
+	}
+
+}
+

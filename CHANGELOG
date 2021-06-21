@@ -1,0 +1,49 @@
+# CHANGELOG   
+
+## 2.0.8
+Changed filename
+
+
+## 2.0.7
+1. Updated translate to alignment
+2. Added semantic and field grid to layout
+3. Create a responsive video tag on reboot
+4. Remove webkit appearance property for ios
+5. Updated README.md
+
+
+## 2.0.6
+1. Updated package information
+2. Modify container gutter value
+
+
+## 2.0.5
+Fixed align-center is not working
+
+
+## 2.0.4
+1. Modify default increase value to 5 in util
+2. Added max-width and max-height util
+4. Added gutter in container
+5. Modify class from show to display
+6. Updated README.md
+
+
+## 2.0.3
+1. Modify duplicate properties of layout style sheets
+2. Fixed horizontal alignment value is broken
+3. Added margin and padding utility
+4. Modify gutter properties
+5. Change filename utility to util
+
+
+## 2.0.2
+Added width and height utility between 100 and 1000
+
+
+## 2.0.1
+Fixed aligns default style
+
+
+## 2.0.0
+Initial commit

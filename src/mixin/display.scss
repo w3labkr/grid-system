@@ -1,0 +1,45 @@
+@import 'common';
+@import 'media';
+
+/// --------------------------------------------------
+/// Box
+/// --------------------------------------------------
+
+// @include make-display;
+@mixin make-display($breakpoint-name:'') {
+
+  // single
+  .#{$breakpoint-name}display{ display: block; }
+  .#{$breakpoint-name}hide{ display: none; }
+
+  // multiple
+  $values: (
+    none: none,
+    block: block,
+    inline: inline,
+    inline-block: inline-block,
+    flex: flex,
+    inline-flex: inline-flex,
+    table: table,
+    table-row: table-row,
+    table-cell: table-cell
+  );
+
+  @each $prop, $attr in $values {
+    .#{$breakpoint-name}display-#{$prop} {display: $attr}
+  }
+
+}
+
+
+
+/// --------------------------------------------------
+/// Visible
+/// --------------------------------------------------
+
+// @include make-visible;
+@mixin make-visible($breakpoint-name:'') {
+  .#{$breakpoint-name}visible { visibility: visible; }
+  .#{$breakpoint-name}invisible { visibility: hidden; }
+  .#{$breakpoint-name}hidden { visibility: hidden; }
+}

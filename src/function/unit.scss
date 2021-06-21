@@ -1,0 +1,39 @@
+/// --------------------------------------------------
+/// Unit
+/// --------------------------------------------------
+
+@function px2rem($px, $base: $browser-context) {
+  @return (strip-unit($px) / strip-unit($base)) * 1rem;
+}
+
+@function rem2px($rem, $base: $browser-context) {
+  @return (strip-unit($rem) * strip-unit($base)) * 1px;
+}
+
+@function rem($px, $base: $browser-context) {
+  @return px2rem(strip-unit($px), strip-unit($base));
+}
+
+@function px2em($px, $base: $browser-context) {
+  @return (strip-unit($px) / strip-unit($base)) * 1em;
+}
+
+@function em2px($px, $base: $browser-context) {
+  @return (strip-unit($px) * strip-unit($base)) * 1px;
+}
+
+
+
+/// --------------------------------------------------
+/// Remove the unit of a length
+/// @link https://css-tricks.com/snippets/sass/strip-unit-function/
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+/// --------------------------------------------------
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}

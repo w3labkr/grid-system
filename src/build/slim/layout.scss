@@ -1,0 +1,36 @@
+@import '../../global';
+@import '../../mixin/layout';
+
+/// --------------------------------------------------
+/// Mixin
+/// --------------------------------------------------
+
+// @include make-basis;
+@mixin make-basis($breakpoint-name:'') {
+
+  // container
+  @include make-container($breakpoint-name);
+  @include make-container-gutter($breakpoint-name);
+
+  // gutter
+  @include make-gutter($breakpoint-name);
+  @include make-grid-gutter(column, width, $breakpoint-name);
+  @include make-grid-gutter(field, width, $breakpoint-name);
+  @include make-grid-gutter(row, height, $breakpoint-name);
+
+  // grid
+  @include make-grids(column, width, $breakpoint-name);
+  @include make-grids(cell, width, $breakpoint-name);
+  @include make-grids(field, width, $breakpoint-name);
+  @include make-grids(row, height, $breakpoint-name);
+
+  // order
+  @include make-orders($breakpoint-name);
+  
+}
+
+/// --------------------------------------------------
+/// Slim
+/// --------------------------------------------------
+
+@include make-basis;

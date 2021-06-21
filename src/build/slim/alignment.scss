@@ -1,0 +1,22 @@
+@import '../../global';
+@import '../../mixin/alignment';
+
+/// --------------------------------------------------
+/// Mixin
+/// --------------------------------------------------
+
+// @include make-basis;
+@mixin make-basis($breakpoint-name:'') {
+
+  @include make-text-alignment($breakpoint-name);
+  @include make-horizontal-alignment($breakpoint-name);
+  @include make-vertical-alignment($breakpoint-name);
+  @include make-translate-alignment($breakpoint-name);
+  
+}
+
+/// --------------------------------------------------
+/// Slim
+/// --------------------------------------------------
+
+@include make-basis;

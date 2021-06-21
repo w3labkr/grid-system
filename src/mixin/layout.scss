@@ -1,0 +1,121 @@
+@import 'common';
+@import 'media';
+
+/// --------------------------------------------------
+/// Container
+/// --------------------------------------------------
+
+// @include make-container;
+@mixin make-container($breakpoint-name:'') {
+  $name: #{$breakpoint-name}container;
+  $breakpoint-key: str-replace($breakpoint-name, '-', '');
+  $breakpoint-value: breakpoint-value($breakpoint-key);
+  %#{$name}{ @include clear; }
+  .#{$name} { 
+    max-width: $breakpoint-value; margin-right: auto; margin-left: auto; 
+    &:after{ @extend %#{$name}; }
+    &-fluid {
+      max-width: none;
+      &:after{ @extend %#{$name}; }
+    }
+  }
+}
+
+
+
+/// --------------------------------------------------
+/// Gutter
+/// --------------------------------------------------
+
+// @include make-gutter;
+@mixin make-gutter($breakpoint-name:'', $start:0, $end:6, $increase:5) {
+  .#{$breakpoint-name}gutter {
+    @for $i from $start through $end {
+      $num: $i * $increase;
+      &-#{$num} { margin: - (($num / 2) * 1px); }
+    }
+  }
+}
+
+// @include make-container-gutter;
+@mixin make-container-gutter($breakpoint-name:'', $start:1, $end:10, $increase:5) {
+  .#{$breakpoint-name}container {
+    @for $i from $start through $end {
+      $num: $i * $increase;
+      &.gutter-#{$num},
+      &-fluid.gutter-#{$num} { padding-left: ($num * 1px); padding-right: ($num * 1px); }
+    }
+  }
+}
+
+// @include make-grid-gutter;
+@mixin make-grid-gutter($grid, $prop, $breakpoint-name:'', $start:0, $end:10, $increase:5) {
+  .#{$breakpoint-name}#{$grid}s {
+    @for $i from $start through $end {
+      $num: $i * $increase;
+      &.gutter-#{$num} { #{$prop}: calc(100% + #{$num * 1px}); }
+      &.gutter-#{$num}>.#{$grid} { padding: (($num / 2) * 1px); }
+    }
+  }
+}
+
+
+
+/// --------------------------------------------------
+/// Grid
+/// --------------------------------------------------
+
+// @include make-grids;
+@mixin make-grids($grid, $prop, $breakpoint-name:'', $start:1, $end:12) {
+  .#{$breakpoint-name}#{$grid}s { 
+    #{$prop}: 100%;
+    &:after { @include clear; }
+  }
+  @include make-grid($grid, $prop, $breakpoint-name, $start, $end);
+  @include make-grid-count($grid, $prop, $breakpoint-name, $start, $end);
+}
+
+@mixin make-grid($grid, $prop, $breakpoint-name:'', $start:1, $end:12) {
+  $name: #{$breakpoint-name}#{$grid};
+  %#{$name} { display: block; float: left; min-width: 1px; min-height: 1px; }
+  .#{$name} { @extend %#{$name}; }
+
+  // Counter Grid
+  @for $i from $start through $end {
+    .#{$name}-#{$i} { 
+      @extend %#{$name}; 
+      #{$prop}: calc(100% / #{$end} * #{$i}); 
+    }
+  }
+
+  // Semantic Grid
+  .#{$breakpoint-name}full-#{$grid} { @extend %#{$name}; width: 100%; }
+  .#{$breakpoint-name}half-#{$grid} { @extend %#{$name}; width: 50%; }
+  .#{$breakpoint-name}quarter-#{$grid} { @extend %#{$name}; width: 25%; }
+
+}
+
+@mixin make-grid-count($grid, $prop, $breakpoint-name:'', $start:1, $end:12) {
+  $name: #{$breakpoint-name}#{$grid};
+  @for $i from $start through $end {
+    .#{$name}-count-#{$i} > .#{$name} { 
+      #{$prop}: calc(100% / #{$i}); 
+    }
+    .#{$name}-count-#{$i} > .#{$name}:nth-child(n) { clear: none; }
+    .#{$name}-count-#{$i} > .#{$name}:nth-child(#{$i}n+1) { clear: both; }
+  }
+}
+
+
+
+/// --------------------------------------------------
+/// Order
+/// --------------------------------------------------
+
+// @include make-orders;
+@mixin make-orders($breakpoint-name:'', $start:1, $end:12) {
+  .#{$breakpoint-name}orders { display: flex; flex-wrap: wrap; flex-direction: row; }
+  @for $i from $start through $end {
+    .#{$breakpoint-name}order-#{$i} { order: $i; }
+  }
+}
